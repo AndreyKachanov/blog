@@ -1,0 +1,521 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "smart-grid"
+
+ 
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	// display: flex
+	// flex-direction: column
+
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	background-color: #dae3e7
+.error
+	color: red !important 
+	font-size: 14px !important 
+
+.wrapper
+	display: flex
+	flex-direction: column
+	height: 100%	
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.page-not-found
+	width: 100%
+	background-color: #fff
+	display: flex
+	flex-direction: column
+	img
+		margin: auto
+	p
+		text-align: center
+		font-family: Roboto
+		font-size: 18px
+	a
+		text-decoration: underline
+		color: #6abd6b
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)		
+
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: 100
+	background-color: #1a1a1a
+	.pulse
+		position: relative
+		left: 50%
+		top: 50vh
+		margin:
+			left: -40px
+			top: -40px
+		&::before, &::after
+			content: ''
+			border: 5px solid #323232
+			width: 80px
+			height: 80px
+			border-radius: 500px
+			position: absolute
+		&::before
+			animation: pulse-outer .8s ease-in infinite
+		&::after
+			animation: pulse-inner .8s linear infinite			
+
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	100%
+		@include opacity(100)
+		transform: scale(1)
+
+header
+	background: #fff
+
+	.top-menu
+		.navbar
+			// position: static
+			background-color: #f8f8f8
+			border: 1px solid #e8e8e8
+			border-radius: 5px
+			padding-top: 4px
+			padding-bottom: 4px
+
+
+
+			.navbar-toggler			
+	    	border-color: rgba(#ccc, 0.7)
+	    	.navbar-toggler-icon
+	    		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+    		
+		// #my-menu
+		// 	display: none
+
+		.hamburger
+			padding: 0
+			// border: 1px solid red
+			display: block
+			line-height: 1px
+			position: absolute
+			top: 13px
+			left: 14px
+			.hamburger-box
+				display: block
+				width: 18px
+				.hamburger-inner
+					top: 4px
+			&:hover
+				opacity: 1 			
+
+
+		.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+			border-radius: 0
+			width: 18px
+			height: 2px
+			background-color: #fff
+			border-radius: 5px
+
+
+		.navbar-nav>a
+			&:first-child
+				padding-left: 0
+			color: #414141
+
+			&:focus, &:hover
+				color: #009a00
+		.auth
+			a
+				i
+					font-size: 14px
+					position: relative
+					top: -3px
+
+	
+
+	.img-block
+		.container
+			padding:
+				top: 16px
+				bottom: 16px
+			.row_smart
+				+row-flex()
+				+justify-content(flex-start)
+				+align-items(center) 
+				.col_smart_img
+
+					+col()
+					+size(3)					
+					+offset-right(1)
+
+					+col-lg-3()
+					+col-md-3()
+				.col_smart_about
+					+col()
+					+size(8)
+
+					+col-lg-8()
+					+col-md-8()					
+
+					+size-sm(12)					
+					+size-xs(12)
+		h1
+			font-size: 48px
+			font-weight: 400
+			color: #414141					
+
+
+.content
+	flex-grow: 1
+	flex-shrink: 0
+	display: flex 
+
+.main
+	margin-left: auto
+	margin-right: auto
+	p, .article-intro
+		color: #444
+		font-size: 16px
+		font-weight: 400
+		line-height: 24px		
+	.container
+		.row_smart
+			+row-flex()
+			+align-items(flex-start)
+			.articles
+				+col()
+				+size(8)
+				
+				margin-top: 50px
+				margin-bottom: 50px
+
+				.article
+					background: #fff
+					margin-bottom: 30px
+					padding: 23px 33px					
+					&:last-child
+						margin-bottom: 0
+					h3
+						a
+							color: #444
+							font-size: 24px
+							font-weight: 400
+							&:hover
+
+					.author
+						position: relative
+						padding: 24px 0
+						font-family: Roboto
+						font-size: 14px
+						color: #919191
+						.orange
+							color: #ff9950
+						&::after						
+							content: ""
+							display: block
+							height: 1px
+							position: absolute
+							bottom: 0
+							left: 0
+							border: 0.8px dashed #959595
+							width: 100%
+					.labels-block
+						.comments
+							// border: 1px solid red
+							margin-bottom: 1.5rem
+							.comment-block
+								margin-top: 1.5rem
+								// border: 1px solid black
+								.user-name
+									font-size: 1rem
+								.date
+									font-style: italic
+									color: #444
+									font-size: 0.9rem
+									margin-bottom: 5px
+									margin-top: -3px
+								.content
+									font-size: 14px		
+
+						margin-top: 28px
+						color: #919191
+						font-size: 14px
+						.labels
+							float: left
+							i,a
+								color: #919191
+						.continue
+							display: block
+							float: right
+							color: #ff9950
+							font-weight: 500
+							font-family: Roboto
+							font-size: 11px
+							line-height: 24px
+							text-transform: uppercase
+
+
+						&::after
+							content: ""
+							display: block
+							clear: both			
+
+			.about				
+				+col()
+				+size(4)
+
+				margin-top: 50px
+				margin-bottom: 50px
+				padding: 23px 33px
+				background: #fff
+				h2
+					font-size: 40px
+					font-weight: 400
+					color: #414141
+				p
+
+				.lime-green
+					color: #6abd6b
+					&:hover
+						text-decoration: none	
+
+.error-auth
+	display: block
+
+.login
+	margin: auto
+	padding: 1.5rem
+	flex-grow: 1
+  
+	form
+		button
+			&:hover
+				cursor: pointer
+
+		.invalid-feedback:first-child
+			text-align: center					
+
+		.row-smart
+			+row-flex()
+			+justify-content(center)
+
+			.col-smart
+				+size(4)
+				+size-lg(5)
+				+size-md(7)
+				+size-sm(9)
+				+size-xs(11)
+		.row-smart:last-child
+			.col-smart
+				display: flex
+				+justify-content(space-between)
+				+align-items(center)
+				
+				button
+					width: 23%
+				a
+					width: 38.7%	
+
+.register
+	margin: auto
+	padding: 1.5rem
+	flex-grow: 1
+
+	h3
+		color: #444
+		font-family: Roboto
+    	font-size: 24px
+    	font-weight: 400
+
+	form
+		button
+			&:hover
+				cursor: pointer
+					
+		.row-captcha
+			.col-smart
+				display: flex
+				justify-content: center
+				align-items: center
+				>*
+					margin: auto
+				button
+					border-radius: 50%		
+ 
+		.row-smart
+			+row-flex()
+			+justify-content(center)
+
+			.col-smart
+				+size(4)
+				+size-lg(5)
+				+size-md(7)
+				+size-sm(9)
+				+size-xs(12)
+
+
+
+	.errors
+		ul
+			border: 1px dashed grey
+			background-color: pink
+			font-size: 12px
+			color: #ff2552
+
+.succ_register
+	align-self: center
+	text-align: center
+
+
+
+footer
+	background-color: #FFF
+	text-align: center
+	padding: 17px 0
+	p
+		padding: 0
+		margin: 0
+		color: #414141
+		line-height: 22px
+		a
+			color: #6abd6b
+			font-size: 16px
+			line-height: 24px
+			&:hover
+				color: #444
+				text-decoration: none
+
+.comments-form-add
+	.btn-outline-secondary
+		border-radius: 50%
+		color: #fff
+		cursor: pointer
+		background-color: #868e96
+		margin-bottom: 1rem
+		margin-top: 1rem
+		margin-left: 1rem
+
+p.comment_succ
+	color: #3c763d
+	border-color: #d6e9c6
+	background-color: #dff0d8
+	padding: 15px
+	border-radius: 5px	
+
+.page-link
+	color: #868e96
+	&:hover
+		color: #000
+
+.page-item.active .page-link
+	background-color: #868e96
+	border-color: #868e96	
+
+.form-group.text-center a
+	color: #444
+
+.top
+	position: fixed
+	bottom: 13px
+	right: -100px
+	background-color: #ff9950
+	z-index: 999999
+	border-radius: 10em
+	color: #666
+	font-size: 26px
+	width: 50px
+	height: 50px
+	text-align: center
+	line-height: 50px
+	cursor: pointer
+	transition: all 0.3s ease
+	opacity: .5
+	i
+		line-height: 0
+	&:hover
+		color: #fff
+		background-color: #ff9950
+		opacity: 1
+	&.active
+		right: 25px
+
+.hamburger--spring .hamburger-inner:before
+	top: 6px
+
+.hamburger--spring .hamburger-inner:after
+	top: 13px
+
+.hamburger.is-active
+	top: 10px !important	
+
+.mmenu-container
+	position: relative
+	left: -15px
+	background-color: #ff0202ad
+	transition: all 0.3s ease
+	opacity: .7
+	min-width: 45px
+	min-height: 45px
+	border-radius: 50%
+	&:hover
+		transition: opacity .3s ease
+		opacity: 1
+		
+@import "media" // Всегда в конце

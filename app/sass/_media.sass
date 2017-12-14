@@ -1,0 +1,134 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+			
+
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px)
+	header
+		.top-menu
+			.hamburger
+				margin-left: 0			
+			.auth
+				a
+					text-decoration: none
+		.img-block
+			text-align: center
+			.col_smart_img
+				display: none
+	.main
+		.container
+			width: 96%
+			.row_smart
+				+flex-direction(column)
+				.articles, .about
+					width: 100%
+					margin-left: 0
+				.about
+					margin-top: 0
+	.mmenu-container
+		position: relative
+		
+
+											
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+	.login form .row-smart:last-child .col-smart
+		>*
+			font-size: 0.93rem
+		button, a
+			padding-left: 0.2rem
+			padding-right: 0.2rem
+		label
+			font-size: 0.87rem	
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	header
+		.navbar-toggler
+			font-size: 0.8rem
+		.navbar-collapse
+			.nav-link
+				font-size: 14px
+					
+		.img-block
+			.container
+				padding-top: 8px
+				padding-bottom: 8px
+
+			h1
+				font-size: 25px
+				margin: 0
+			p
+				font-size: 14px
+				margin: 0
+
+	.login
+		form
+			.row-smart:last-child
+				margin-bottom: 0
+				.col-smart
+					flex-wrap: wrap
+					+justify-content(space-around)
+					button
+						width: 45%
+					a
+						// display: block
+						text-decoration: underline
+						background: none
+						border: none
+						width: 100%
+						margin-top: 0.5rem
+						color: #007bff
+			.form-control, .form-group
+				font-size: 0.9rem
+			.form-group
+				margin-bottom: 0.7rem
+
+	footer
+		font-size: 14px
+		padding: 14px 0									
+
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+

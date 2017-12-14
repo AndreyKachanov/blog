@@ -1,0 +1,108 @@
+@import "fonts"
+@import "libs_admin"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	background-color: #dae3e7
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.error
+	color: red
+
+.nav-item.user_name
+ a
+  i
+  	position: relative
+  	top: -3px
+  	left: 2px
+
+.container-fluid
+	// border: 1px solid red
+	h1.page_title
+		font-size: 21px
+	h1.add
+		float: left
+		margin-right: 9px		
+	h1.main_title
+		text-align: center
+		font-size: 21px
+
+.articles_editor
+	padding: 15px
+	// border: 1px solid red
+	table
+		font-size: 14px
+	table td:last-child
+		min-width: 154px
+	.pagination
+		margin-top: 40px			
+
+
+.navbar-nav a.nav-link[aria-expanded='true']
+	background-color: #2d2d2d
+	color: #fff !important
+
+.collapse_bg
+	background-color: #2d2d2d
+	color: #fff !important	
+
+.color-white
+	// background-color: #2d2d2d!important
+	color: #fff !important
+	// padding: 0.6rem 1rem !important	
+
+#mainNav .navbar-collapse .navbar-sidenav
+	margin-top: 61px
+
+footer.sticky-footer
+	position: static !important
+	width: 100%
+
+.modal-dialog
+	margin-top: 200px			
