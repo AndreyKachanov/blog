@@ -15,7 +15,7 @@ spl_autoload_register(
 
 define('BASE_URL', '/');
 // нужно для IE 7 и ниже
-define('DOMEN', 'http://blog_new.loc');
+define('DOMEN', 'blog.andreiikachanov.loc');
 
 define('MYSQL_SERVER', 'localhost');
 define('MYSQL_USER', 'root');
